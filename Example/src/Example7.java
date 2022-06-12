@@ -1,43 +1,50 @@
-import java.util.Scanner;
+
 
 public class Example7 {
 
 	public static void main(String[] args) {
-		/* 응용문제7
-		 
-		 사용자가 다음질문에 확인하여 값을 입력 후 해당 결과를 돌출하는 프로세서 제작
-		 "첫번째 입력값 단(1~10까지) 입니다.":
-		 "두번째 입력값 단(1~10까지) 입니다.":
-		 "세번째 입력값 단(1~10까지) 입니다.":
-		 "마지막 질문 입니다. 해당 세가지 값에 대한 산술기호를 적으시오:" +,-,*,/
-		 
-		 해당 산술기호에 맞게 산술식을 적용하여 최종값을 출력시키시오
-		 */
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("첫번째 입력값 단(1~10까지) 입니다:");
-		int no1 = sc.nextInt();
-		System.out.println("두번째 입력값 단(1~10까지) 입니다:");
-		int no2 = sc.nextInt();
-		System.out.println("세번째 입력값 단(1~10까지) 입니다:");
-		int no3 = sc.nextInt();
-		System.out.println("해당 세가지 값에 대한 산술기호를 적으시오:");
-		String ms = sc.next();
+        /*
+         다차원 배열로 생성 + 외부 class 및 메소드 사용
+         [data]
+         {"홍길동","합격"},
+         {"이순신","합격"},
+         {"강감찬","불합격"},
+         {"김유신","합격"},
+         {"유관순","불합격"},
+         {"장보고","불합격"},
+          		
+          다차원 배열 형태이며, 해당 값중 합격자만 출력되도록 합니다.
+          단, 배열값을 외부 클래스 안에 메소드에서 처리가 되도록 합니다.
+          결과 : 홍길동 이순신 김유신		
+         */
 		
-		if(ms.equals("+")) {
-			System.out.println(no1+no2+no3);
-		}
-		else if(ms.equals("-")) {
-			System.out.println(no1-no2-no3);
-		}
-		else if(ms.equals("*")) {
-			System.out.println(no1*no2*no3);
-		}
-		else {
-			System.out.println(no1/no2/no3);
-		}
-	
-		
+		named aa = new named();
+        aa.name();
+        aa = null;
 	}
 
+}
+class named {
+	public void name() {
+		String[][] a = {
+				 {"홍길동","합격"},
+		         {"이순신","합격"},
+		         {"강감찬","불합격"},
+		         {"김유신","합격"},
+		         {"유관순","불합격"},
+		         {"장보고","불합격"}
+				
+		};
+		int ea = a.length;
+		int ii = 0;
+		for (int i = 0; i < ea; i++) {
+			if (a[i][1].equals("합격")) {
+				
+				System.out.printf("%s",a[i][0]);
+			}
+			
+			i++;
+		}
+		
+	}
 }
